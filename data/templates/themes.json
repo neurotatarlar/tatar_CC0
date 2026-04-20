@@ -1,0 +1,473 @@
+{
+  "language": "tat_Cyrl",
+  "placeholder_syntax": "{slot}",
+  "form_syntax": "{slot:form}",
+  "supported_forms": [
+    "nom",
+    "gen",
+    "dat",
+    "acc",
+    "loc",
+    "abl",
+    "1sg",
+    "3sg"
+  ],
+  "themes": {
+    "assistant_common": {
+      "description": "Generic chatbot and voice assistant requests",
+      "intents": {
+        "greet": [
+          "сәлам",
+          "хәерле көн",
+          "исәнме",
+          "{assistant_name} сәлам"
+        ],
+        "ask_help": [
+          "ярдәм кирәк",
+          "миңа ярдәм ит әле",
+          "нәрсә эшли аласың",
+          "{assistant_name} миңа булыш"
+        ],
+        "repeat": [
+          "тагын бер кат әйт",
+          "кабатла әле",
+          "аңламадым яңадан әйт"
+        ],
+        "clarify": [
+          "төгәлрәк аңлат",
+          "моны гади итеп әйт",
+          "нәрсә дигән сүз бу"
+        ],
+        "stop_cancel": [
+          "тукта",
+          "кирәк түгел",
+          "оныт моны",
+          "юк туктат"
+        ],
+        "spoken_actions": [
+          "мин {daily_action:1sg}",
+          "мин хәзер {daily_action:1sg}",
+          "мин иртәгә {daily_action:1sg}",
+          "ул {daily_action:3sg}",
+          "{contact} {daily_action:3sg}",
+          "ул хәзер {state_action:3sg}"
+        ]
+      }
+    },
+    "web_search": {
+      "description": "Google like search and information retrieval",
+      "intents": {
+        "search_topic": [
+          "{topic} турында эзлә",
+          "{topic} буенча мәгълүмат тап",
+          "{topic} турында әйт",
+          "{topic} турында интернеттан кара"
+        ],
+        "search_local": [
+          "{city:loc} {place_type:acc} тап",
+          "{village:loc} {place_type:acc} тап",
+          "якындагы {place_type:acc} күрсәт",
+          "{city:loc} {place_type} бармы"
+        ],
+        "price_query": [
+          "{product} күпме тора",
+          "{product:gen} бәясен кара",
+          "{product:dat} бәяләрне күрсәт"
+        ],
+        "compare": [
+          "{product} белән {product} чагыштыр",
+          "кайсысы яхшырак {product}мы әллә {product}мы"
+        ],
+        "open_result": [
+          "беренче нәтиҗәне ач",
+          "икенче сайтка кер",
+          "шул битне ачып күрсәт"
+        ],
+        "platform_search": [
+          "«Яндекс»та «{search_query_tatar}» турында эзлә",
+          "Google-да «{google_query}» табып ач",
+          "VK-да «{vk_group_query}» төркемен эзлә",
+          "YouTube-та «{youtube_query}» дип эзлә"
+        ],
+        "open_topic_resource": [
+          "Википедиядә «{wiki_article}» мәкаләсен ач",
+          "Telegram-да «{telegram_resource}» каналын эзлә",
+          "«Яндекс.Музыка»да «{music_collection}» плейлистын ач"
+        ]
+      }
+    },
+    "navigation_maps": {
+      "description": "Maps directions and nearby places",
+      "intents": {
+        "find_place": [
+          "{city:loc} {place_type:acc} тап",
+          "{village:loc} {place_type:acc} тап",
+          "якындагы {landmark:acc} тап",
+          "{city:loc} {landmark} кайда"
+        ],
+        "route_to_place": [
+          "{landmark:dat} маршрут төзе",
+          "{village:dat} юл күрсәт",
+          "{place_type:dat} ничек барырга",
+          "{city:dat} юл күрсәт"
+        ],
+        "eta": [
+          "{landmark:dat} кадәр күпме вакыт",
+          "{place_type:dat} ничә минут барасы",
+          "{city:dat} барып җитү күпме ала"
+        ],
+        "traffic": [
+          "{city:loc} юл хәле нинди",
+          "хәзер юллар бушмы",
+          "{city:loc} бөкеләр бармы"
+        ],
+        "route_from_street": [
+          "{street_kazan_tatar} буеннан якындагы {nearby_place:dat} кадәр {travel_mode} барырга юл күрсәт.",
+          "{street_kazan_tatar} буеннан якын-тирәдәге {nearby_place:dat} кадәр {travel_mode} барырга юл күрсәт."
+        ],
+        "nearby_help": [
+          "якын-тирәдәге {nearby_place:acc} эзләп табарга ярдәм ит.",
+          "якындагы {nearby_place:acc} табарга ярдәм ит."
+        ],
+        "compare_options": [
+          "{street_kazan_tatar} яныннан «{nearby_place} А» яки «{nearby_place} Б» га кайсысы тизрәк?",
+          "{street_kazan_tatar} яныннан «{nearby_place} А» яки «{nearby_place} Б» га кайсысына бару яхшырак?"
+        ]
+      }
+    },
+    "telecom_support": {
+      "description": "Call center and support utterances for telecom and internet operators",
+      "intents": {
+        "report_issue": [
+          "{issue}",
+          "миндә {issue}",
+          "{service} эшләми",
+          "{company:gen} хезмәте буенча проблема бар"
+        ],
+        "check_balance": [
+          "балансымны тикшер",
+          "исәптә күпме акча калган",
+          "минем балансны әйт"
+        ],
+        "change_tariff": [
+          "{tariff:dat} күчер",
+          "тарифны алыштырырга телим",
+          "миңа яңа тариф кирәк"
+        ],
+        "connect_service": [
+          "{service:acc} тоташтыр",
+          "өстәмә хезмәтне куш",
+          "бу хезмәтне активлаштыр"
+        ],
+        "contact_operator": [
+          "оператор белән тоташтыр",
+          "тере белгеч кирәк",
+          "кеше белән сөйләшергә телим"
+        ]
+      }
+    },
+    "banking_payments": {
+      "description": "Banking transfer card and payment intents",
+      "intents": {
+        "check_balance": [
+          "картаның балансын күрсәт",
+          "хисапта күпме акча бар",
+          "балансны әйт әле"
+        ],
+        "transfer_money": [
+          "{amount} күчер",
+          "{contact:dat} {amount} җибәр",
+          "{amount} картадан картага күчер"
+        ],
+        "pay_bill": [
+          "телефон өчен түлә",
+          "{service} өчен {amount} түлә",
+          "коммуналь хезмәтләргә түләргә кирәк"
+        ],
+        "block_card": [
+          "картаны яп",
+          "картам югалды блокла",
+          "картаны вакытлыча туктат"
+        ],
+        "card_status": [
+          "соңгы операцияләрне күрсәт",
+          "акча кая киткәнен күрсәт",
+          "соңгы түләүләремне әйт"
+        ]
+      }
+    },
+    "ecommerce_delivery": {
+      "description": "Order delivery tracking and returns",
+      "intents": {
+        "order_item": [
+          "{order_item:acc} заказ ит",
+          "миңа {order_item} кирәк",
+          "{order_item:dat} заказ бир"
+        ],
+        "track_order": [
+          "заказ кайда",
+          "минем заказны тикшер",
+          "доставка кайчан килә"
+        ],
+        "change_delivery": [
+          "доставка вакытын үзгәрт",
+          "заказны {date:dat} күчер",
+          "килү вакытын алыштырырга кирәк"
+        ],
+        "cancel_order": [
+          "заказны бетер",
+          "мин бу заказдан баш тартам",
+          "заказны туктат"
+        ],
+        "return_item": [
+          "товарны кире кайтарырга телим",
+          "кайтару рәсмиләштер",
+          "бу әйберне кире бирергә кирәк"
+        ]
+      }
+    },
+    "appointments_services": {
+      "description": "Booking rescheduling and appointment management",
+      "intents": {
+        "book_visit": [
+          "{date} {time} яздыр",
+          "миңа кабул итүгә язылырга кирәк",
+          "{service} буенча вакыт броньла"
+        ],
+        "reschedule_visit": [
+          "язылуны күчер",
+          "башка вакытка яздыр",
+          "{date} урынына {date} күчер"
+        ],
+        "cancel_visit": [
+          "язылуны бетер",
+          "кабул итүне туктат",
+          "мин килә алмыйм язылуны ал"
+        ],
+        "ask_availability": [
+          "иң якын буш вакыт кайчан",
+          "бүген урын бармы",
+          "{date:dat} язылып буламы"
+        ]
+      }
+    },
+    "transport_travel": {
+      "description": "Taxi public transport train and flight requests",
+      "intents": {
+        "call_taxi": [
+          "{landmark:dat} такси кирәк",
+          "такси чакыр",
+          "хәзер үк машина җибәр"
+        ],
+        "public_transport": [
+          "{landmark:dat} нинди автобус бара",
+          "якындагы тукталыш кайда",
+          "кайсы маршрут миңа туры килә"
+        ],
+        "buy_ticket": [
+          "{city:dat} билет тап",
+          "{transport:dat} билет алырга кирәк",
+          "{date:dat} билет бармы"
+        ],
+        "schedule_query": [
+          "{transport} кайчан китә",
+          "поезд расписаниесен күрсәт",
+          "иң якын рейс кайчан"
+        ]
+      }
+    },
+    "media_entertainment": {
+      "description": "Music movies audio playback and recommendations",
+      "intents": {
+        "play_media": [
+          "{genre} {media_type:acc} куй",
+          "{media_type:acc} кабыз",
+          "нәрсә дә булса тыңлат"
+        ],
+        "play_specific": [
+          "{person_name:gen} яраткан {media_type:acc} куй",
+          "балалар өчен {media_type:acc} тап",
+          "тыныч музыка кабыз"
+        ],
+        "control_playback": [
+          "туктап тор",
+          "алга күчер",
+          "тавышны кимет",
+          "тавышны арттыр"
+        ],
+        "recommendations": [
+          "кызык фильм тәкъдим ит",
+          "яңа музыка тап",
+          "бүген нәрсә карарга"
+        ]
+      }
+    },
+    "smart_home": {
+      "description": "Home automation and device control based on short polite and compound voice commands",
+      "intents": {
+        "short_commands": [
+          "{light_device:acc} кабыз",
+          "{light_device:acc} сүндер",
+          "{network_device:acc} кабыз",
+          "{network_device:acc} сүндер",
+          "{shade_group:acc} ач",
+          "{shade_group:acc} яп",
+          "{climate_device:acc} кабыз",
+          "{climate_device:acc} сүндер",
+          "{light_device:acc} кабыз, {room:loc}",
+          "{light_device:acc} сүндер, {room:loc}",
+          "{shade_group:acc} ач, {room:loc}",
+          "{climate_device:acc} сүндер, {room:loc}"
+        ],
+        "polite_room_control": [
+          "{room:loc} {light_group:acc} кабызып куй әле",
+          "{room:loc} {light_device:acc} сүндер әле",
+          "{room:loc} {climate_device:acc} кабыз әле",
+          "{room:loc} {shade_group:acc} ачып җибәр әле",
+          "{room:loc} {shade_group:acc} ябып куй әле",
+          "{room:loc} {light_device:gen} яктылыгын {target_percent} куй әле",
+          "{room:loc} {light_device:gen} яктылыгын {target_percent} кимет әле",
+          "{room:loc} {light_device:gen} яктылыгын {target_percent} күтәр әле",
+          "{room:loc} {climate_device:acc} {target_percent} көйлә әле",
+          "{room:loc} {climate_device:gen} көчен {target_percent} куй әле"
+        ],
+        "compound_control": [
+          "зинһар, {room:loc} барлык {light_group:acc} кабызып җибәр һәм {light_device:gen} яктылыгын {target_percent} көйләп куй",
+          "{room:loc} {climate_device:gen} эшләвен туктат һәм шул ук вакытта {light_group:gen} яктылыгын {target_percent} киметеп куйчы",
+          "{room:loc} {network_device:acc} сүндереп тор һәм шул ук вакытта {climate_device:gen} эш көчен {target_percent} калдырчы",
+          "{room} өчен {shade_group:acc} тулысынча ачып җибәрче һәм шул ук вакытта {light_device:gen} яктылыгын {target_percent} көйләп куйчы зинһар",
+          "{room} өчен барлык {light_group:acc} сүндереп куйчы һәм шул ук вакытта {climate_device:gen} эш көчен {target_percent} калдырчы зинһар"
+        ],
+        "status_query": [
+          "{climate_device} эшлиме",
+          "{network_device} эшлиме",
+          "{room:loc} температура ничә",
+          "{room:loc} ут кабызылганмы"
+        ]
+      }
+    },
+    "reminders_alarms": {
+      "description": "Reminder and alarm requests in formal neutral chatty and self-correction styles",
+      "intents": {
+        "formal_reminder": [
+          "зинһар, {absolute_time_phrase} {reminder_action} искә төшер",
+          "рәхмәт, {relative_time_phrase} {reminder_action} искә төшерү куй",
+          "зинһар, {absolute_time_phrase} {alarm_action} будильник куй"
+        ],
+        "neutral_reminder": [
+          "{absolute_time_phrase} {reminder_action} искә төшер",
+          "{relative_time_phrase} {reminder_action} искә төшерү куй",
+          "{absolute_time_phrase} {alarm_action} будильник куй"
+        ],
+        "chatty_reminder": [
+          "{relative_time_colloquial} {chatty_action_phrase}, яме",
+          "{relative_time_colloquial} {chatty_action_phrase}, онытма",
+          "{absolute_time_phrase} уятырсың, яме"
+        ],
+        "self_correction": [
+          "юк, {old_time_phrase} түгел, ә {new_time_phrase} {reminder_action} кирәк иде",
+          "әйбәт түгел, {old_time_phrase} түгел, ә {new_time_phrase} {chatty_action_phrase} дип язылган иде"
+        ],
+        "dual_slot_reminder": [
+          "{absolute_time_phrase} {alarm_action} будильник куй һәм {relative_time_phrase} {reminder_action} искә төшерү куй",
+          "{absolute_time_phrase} {reminder_action} һәм {relative_time_phrase} {reminder_action} искә төшерү куй"
+        ]
+      }
+    },
+    "messaging_social": {
+      "description": "Short medium and long messaging commands for chat apps and social platforms",
+      "intents": {
+        "short_message": [
+          "{message_platform_loc} {message_name:dat} «{short_message_text}» дип {message_send_verb}",
+          "{message_platform_loc} {message_name:dat} «{short_message_text}» дип сорау җибәр"
+        ],
+        "medium_message": [
+          "{message_platform_loc} {message_name:dat}: «{medium_message_text}» — язып җибәр әле",
+          "{message_platform_loc} {message_name:dat}: «{medium_message_text}» — сорау җибәр әле, зинһар"
+        ],
+        "long_message": [
+          "{message_platform_loc} {message_name:dat} болай диеп яз: {long_message_text}",
+          "{message_platform_loc} {message_name:dat} болай диеп сорау җибәр: {long_message_text}"
+        ]
+      }
+    },
+    "weather_time_news": {
+      "description": "Weather time calendar and daily info",
+      "intents": {
+        "weather": [
+          "{weather_period} {weather_city:loc} температура ничек",
+          "{weather_period} {weather_city:loc} яңгыр явачакмы",
+          "{weather_period} {weather_city:loc} яңгыр көтеләме",
+          "{weather_period} {weather_city:loc} җилнең тизлеге нинди",
+          "{weather_period} {weather_city:loc} җил көчле булачакмы",
+          "{weather_period} {weather_city:loc} температура күтәреләчәкме"
+        ],
+        "time_query": [
+          "сәгать ничә",
+          "{city:loc} вакыт күпме",
+          "хәзер вакытны әйт"
+        ],
+        "date_query": [
+          "бүген нинди көн",
+          "иртәгә нинди дата",
+          "атнаның кайсы көне"
+        ],
+        "news_query": [
+          "соңгы яңалыкларны әйт",
+          "{topic} буенча яңалыклар тап",
+          "бүгенге яңалыкларны укы"
+        ]
+      }
+    },
+    "account_profile": {
+      "description": "Profile password account access and app support",
+      "intents": {
+        "login_issue": [
+          "аккаунтка керә алмыйм",
+          "серсүзне оныттым",
+          "код килми"
+        ],
+        "reset_password": [
+          "серсүзне яңарт",
+          "яңа пароль куярга кирәк",
+          "керү кодын яңадан җибәр"
+        ],
+        "update_profile": [
+          "телефон номерын үзгәрт",
+          "почта адресын яңарт",
+          "шәхси мәгълүматларны төзәт"
+        ],
+        "notification_settings": [
+          "хәбәрләрне сүндер",
+          "смс хәбәрләрне кабыз",
+          "искәртмәләр көйләүләрен үзгәрт"
+        ]
+      }
+    },
+    "call_center_general": {
+      "description": "Broad service desk and operator language",
+      "intents": {
+        "identify_problem": [
+          "проблемамны әйтергә телим",
+          "миңа консультация кирәк",
+          "бер сорау бар иде"
+        ],
+        "request_callback": [
+          "миңа кире шалтыратыгыз",
+          "уңай вакытта шалтыратыгыз",
+          "соңрак элемтәгә чыгыгыз"
+        ],
+        "complaint": [
+          "шикаять калдырырга телим",
+          "сервис сыйфаты начар",
+          "бу хәл буенча мөрәҗәгать ач"
+        ],
+        "status_check": [
+          "мөрәҗәгатьнең статусы нинди",
+          "гаризам каралганмы",
+          "сорау кайсы этапта"
+        ]
+      }
+    }
+  }
+}
